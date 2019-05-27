@@ -31,9 +31,9 @@ public class JPAConfig {
 
 
     @Bean//创建实体类的管理工厂
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter japVendor = new HibernateJpaVendorAdapter();
-        japVendor.setGenerateDdl(false);//不让它自动生成表结构，掌握控制权
+        japVendor.setGenerateDdl(true);//不让它自动生成表结构，掌握控制权
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource());
         entityManagerFactory.setJpaVendorAdapter(japVendor);

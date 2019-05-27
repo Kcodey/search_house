@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 /**
- * Created by 瓦力.
+ * Created by BigK.
  */
 public interface UserRepository extends CrudRepository<User, Long> {
 

@@ -1,7 +1,7 @@
 package kdy.xunwu.security;
 
 import kdy.xunwu.entity.User;
-import kdy.xunwu.service.IUserService;
+import kdy.xunwu.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -32,7 +32,8 @@ public class AuthProvider implements AuthenticationProvider {
             throw new AuthenticationCredentialsNotFoundException("authError");
         }
 
-        if (this.passwordEncoder.isPasswordValid(user.getPassword(),inputPassword,user.getId())){
+//        if (this.passwordEncoder.isPasswordValid(user.getPassword(),inputPassword,user.getId()))
+        if (user.getPassword().equals(inputPassword)){
             return new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
         }
         throw new BadCredentialsException("authError");

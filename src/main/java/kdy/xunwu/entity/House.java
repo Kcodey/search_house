@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by 瓦力.
+ * Created by BigK.
  */
 @Entity
 @Table(name = "house")

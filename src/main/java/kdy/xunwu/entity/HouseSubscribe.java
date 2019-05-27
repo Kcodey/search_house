@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * 预约看房实体类
- * Created by 瓦力.
+ * Created by BigK.
  */
 @Entity
 @Table(name = "house_subscribe")

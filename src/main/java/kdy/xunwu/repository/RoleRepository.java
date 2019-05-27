@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 角色数据DAO
- * Created by 瓦力.
+ * Created by BigK.
  */
 public interface RoleRepository extends CrudRepository<Role, Long> {
     List<Role> findRolesByUserId(Long userId);

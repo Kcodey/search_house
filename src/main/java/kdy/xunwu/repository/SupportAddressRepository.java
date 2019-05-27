@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 /**
- * Created by 瓦力.
+ * Created by BigK.
  */
 public interface SupportAddressRepository extends CrudRepository<SupportAddress, Long>{
     /**

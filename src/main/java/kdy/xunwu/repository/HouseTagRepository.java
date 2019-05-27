@@ -6,9 +6,10 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 /**
- * Created by 瓦力.
+ * Created by BigK
+ * 2019-03-19 20:32
  */
-public interface HouseTagRepository extends CrudRepository<HouseTag, Long> {
+public interface HouseTagRepository extends CrudRepository<HouseTag,Long> {
     HouseTag findByNameAndHouseId(String name, Long houseId);
 
     List<HouseTag> findAllByHouseId(Long id);

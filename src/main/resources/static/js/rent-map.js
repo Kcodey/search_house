@@ -1,5 +1,5 @@
 /**
- * Created by 瓦力.
+ * Created by BigK.
  */
 var regionCountMap = {}, // 地区数据
     labels = [], // 标签列表
@@ -141,7 +141,7 @@ function drawRegion(map, regionList) {
 
     if (!customLayer) {
         customLayer = new BMap.CustomLayer({
-            geotableId: 175730,
+            geotableId: 200645,
             q: '', // 检索关键字
             tags: '', // 空格分隔的字符串
             filter: '', // 过滤条件，参考：http://lbsyun.baidu.com/index.php?title=lbscloud/api/geosearch
@@ -180,17 +180,13 @@ function drawRegion(map, regionList) {
             enableSendToPhone: true, // 是否显示发送到手机按钮
             searchTypes: [
                 BMAPLIB_TAB_SEARCH, // 周边检索
-                // BMAPLIB_TAB_TO_HERE, // 到这里去
-                // BMAPLIB_TAB_FROM_HERE // 从这里出发
+                BMAPLIB_TAB_TO_HERE, // 到这里去
+                BMAPLIB_TAB_FROM_HERE // 从这里出发
             ]
         });
 
         var marker = new BMap.Marker(point); // 创建marker标注
-        marker.addEventListener("click", function (e) { // 点击去除
-            map.removeOverlay(e.target);
-        });
-
-        marker.setAnimation(BMAP_ANIMATION_BOUNCE); // 跳动的动画
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
         searchInfoWindow.open(marker);
         map.addOverlay(marker);
     }

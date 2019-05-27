@@ -1,6 +1,8 @@
 package kdy.xunwu.config;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -21,6 +23,8 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 @Configuration
 //ApplicationContextAware接口帮助获取spring的上下文
 public class WebMvcConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
+    @Value("${spring.thymeleaf.cache}")
+    private boolean thymeleafCacheEnable = true;
     private ApplicationContext applicationContext;
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -45,6 +49,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter implements Application
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(this.applicationContext);
         templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setCacheable(thymeleafCacheEnable);
         return templateResolver;
     }
     /**
@@ -70,7 +75,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter implements Application
         return viewResolver;
     }
 
-
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 
 
 

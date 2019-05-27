@@ -2,8 +2,9 @@ package kdy.xunwu.entity;
 
 import javax.persistence.*;
 
+
 /**
- * Created by 瓦力.
+ * Created by BigK.
  */
 @Entity
 @Table(name = "support_address")
