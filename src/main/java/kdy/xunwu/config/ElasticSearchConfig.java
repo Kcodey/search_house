@@ -35,8 +35,7 @@ public class ElasticSearchConfig {
 
         InetSocketTransportAddress master = new InetSocketTransportAddress(
 //            InetAddress.getByName(esHost), esPort
-          InetAddress.getByName("localhost"), 9300
-        );
+          InetAddress.getByName("localhost"), 9300);
 
         TransportClient client = new PreBuiltTransportClient(settings)
                 .addTransportAddress(master);
